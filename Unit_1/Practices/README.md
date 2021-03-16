@@ -40,8 +40,8 @@ message slice (5,9);
 ```
 
 5. ¿Cual es la diferencia entre value (val) y una variable (var) en scala?
-```**var** es una variable. Es una referencia mutable a un valor.Dado que es mutable, su valor puede cambiar a lo largo de la vida útil del programa. Por otro lado, la palabra clave **val** representa un valor. Es una referencia inmutable, lo que significa que su valor nunca cambia. Una vez asignado, siempre mantendrá el mismo valor.
-```
+
+**var** es una variable. Es una referencia mutable a un valor.Dado que es mutable, su valor puede cambiar a lo largo de la vida útil del programa. Por otro lado, la palabra clave **val** representa un valor. Es una referencia inmutable, lo que significa que su valor nunca cambia. Una vez asignado, siempre mantendrá el mismo valor.
 
 6. Dada la tupla (2,4,5,1,2,3,3.1416,23) regresa el numero 3.1416 
 ```scala

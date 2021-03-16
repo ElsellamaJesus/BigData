@@ -4,7 +4,7 @@
 
 1. Desarrollar un algoritmo en scala que calcule el radio de un circulo
 ```scala
-sval pi = 3.1416
+val pi = 3.1416
 var c = 10;
 println($"El radio es de ${c/pi}")
 ```

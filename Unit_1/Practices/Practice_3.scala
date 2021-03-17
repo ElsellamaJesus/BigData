@@ -1,77 +1,100 @@
-import util.control.Breaks._
-import scala.collection.JavaConversions._
+// Practica 3 - Serie Fibonacci
 
-///ALGORITMO 1 DE LA SERIE FIBONACCI
-def fib(n:Int): Int={
-    if (n < 2){
+// Algoritmo #1. Versión Recursiva Descendente
+def fib1(n: Int):Int = {
+    if(n < 2){
         return n
+    } else {
+        return fib1(n-1) + fib1(n-2)
     }
-    else{
-        return fib(n-1) + fib(n-2)
-    }
-}
-  fib(8)
-//********************************************************************************
-//ALGORITMO 2 DE LA SERIE FIBONACCI
-var u=0.0
-var j=0.0
+} 
 
-def fib(n:Int): Int={
-    if (n < 2){
+
+// Algoritmo #2. Versión con Fórmula Explícita 
+def fib2(n: Int):Double = {
+    if(n < 2){
         return n
-    }
-    else{
-        u = (1+(Math.sqrt(5))/2
-        j = (((Math.pow(u,n))-(Math.pow((1-u),n)))/(Math.sqrt(5)))
-        return Math.round(j)
+    }else{
+        var i = ((1 + math.sqrt(5))/2)
+        var j = ( (math.pow(i,n) - (1-i)) / math.sqrt(5) )
+        return j
     }
 }
 
-//********************************************************************************
-//ALGORITMO 3 DE LA SERIE FIBONACCI
-var a=0
-var b=1
-var c
 
-def fib(n:Int): Int={
-    a = 0
-    b = 1
-    for(k <- Range(0,n)){
-        c = b+a
+// Algoritmo #3. Version Iterativa
+def fib3(n: Int):Int = {
+    var a = 0
+    var b = 1
+    var c = 0
+    var i = 0
+    for(i <- 1 to n){
+        c = b + a
         a = b
-        b = c         
+        b = c
     }
     return a
 }
 
-//********************************************************************************
-//ALGORITMO 4 DE LA SERIE FIBONACCI
-def fib(n:Int): Int={
-    a = 0
-    b = 1
-    for(k <- Range(0,n)){
-        b = b+a
-        a = b-a
-          
-    }
-    return b
+
+// Algoritmo #4. Versión Iterativa 2 Variables
+// *** El algortimo pide retornar 'b' pero si colocamos 'b' el algoritmo omite un lugar 
+def fib4(n: Int):Int = {
+    var a = 0
+    var b = 1
+    var i = 0
+    for(i <- 1 to n){
+        b = b + a
+        a = b - a
+    } 
+    return a
 }
 
-//********************************************************************************
-//ALGORITMO 5 DE LA SERIE FIBONACCI
-var vector = Lista(0,1,2,3,4,5,6,7,8,9,10)
-def fib(n:Int): Int={
-    if (n < 2){
+
+// Algoritmo #5. Versión Iterativa Vector
+def fib5(n: Int):Int = {
+    if(n < 2){
         return n
-    }
-    else{
-        ffor(k <- Range(2,((Lista.length)+1)){
-        
-          Lista=Lsita-1+Lista-2
+    } else {
+        var vector = Array.range(0,n + 1)
+        vector(0) = 0
+        vector(1) = 1
+        var i = 0
+        // n en vez n + 1
+        for(i <- 2 to n){
+            vector(i) = vector(i-1) + vector(i-2)
         }
-    return vector(k)
+        return vector(n)
     }
 }
 
-//********************************************************************************
-// Algoritmo #6. Versión Divide y Vencerás
+
+// Algoritmo #6. Versión Divide y Vencerás 
+def fib6(n: Double): Double = {
+    if(n <= 0){
+        return n; 
+    }else{
+        var i: Double = n - 1;
+        while(i > 0){
+        var a: Double = auxTwo;
+        var b: Double = auxOne;
+        var c: Double = auxOne;
+        var d: Double = auxTwo;
+        var auxOne: Double = 0;
+        var auxTwo: Double = 1
+                if(i % 2 == 0){
+                    auxOne = ((d*b)+(c*a));
+                    auxTwo = ((d*(b+a))+ (c*b));
+                    a = auxOne;
+                    b = auxTwo;
+                    auxOne =  math.pow(c,2) + math.pow(d,2);
+                    auxTwo = (d*((2*c)+d));
+                    c = auxOne;
+                    d = auxTwo;
+                    i = i / 2;
+                }
+                return (a + b);
+        }
+    }
+}
+

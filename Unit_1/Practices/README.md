@@ -98,7 +98,7 @@ name += ("Miguel" -> 23)
 
 ### Fibonacci number
 
-##### Algorithm 1. Descending recursive version
+- **Algorithm 1.** Descending recursive version
 ```scala
 def fib1(n: Int):Int = {
     if(n < 2){
@@ -109,7 +109,7 @@ def fib1(n: Int):Int = {
 } 
 ```
 
-##### Algorithm 2. Version with explicit formula
+- **Algorithm 2.** Version with explicit formula
 ```scala
 def fib2(n: Int):Double = {
     if(n < 2){
@@ -122,7 +122,7 @@ def fib2(n: Int):Double = {
 }
 ```
 
-##### Algorithm 3. Iterative version
+- **Algorithm 3.** Iterative version
 ```scala
 def fib3(n: Int):Int = {
     var a = 0
@@ -139,7 +139,7 @@ def fib3(n: Int):Int = {
 
 ```
 
-##### Algorithm 4. Iterative version 2 variables
+- **Algorithm 4.** Iterative version 2 variables
 ```scala
 def fib4(n: Int):Int = {
     var a = 0
@@ -153,7 +153,7 @@ def fib4(n: Int):Int = {
 }
 ```
 
-##### Algorithm 5. Iterative version vector
+- **Algorithm 5.** Iterative version vector
 ```scala
 def fib5(n: Int):Int = {
     if(n < 2){
@@ -172,7 +172,7 @@ def fib5(n: Int):Int = {
 }
 ```
 
-##### Algorithm 6. Divide and Conquer Version
+- **Algorithm 6.** Divide and Conquer Version
 ```scala
 def fib6(n: Double): Double = {
     if(n <= 0){

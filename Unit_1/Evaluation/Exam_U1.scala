@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 // Exam Unit 1 - Big Data
 
 // Import libraries
-=======
-// Exam Unit 1 
- 
->>>>>>> 28930c05ce1aff8748fe25c81f1bdf1be9a0d76e
 import org.apache.spark.sql.SparkSession
 import spark.implicits._
 
@@ -24,32 +19,18 @@ df.printSchema()
 // 5. Print the first 5 columns.
 df.head(5)
 
-<<<<<<< HEAD
-// 6. Use describe () to learn about the DataFrame.
-=======
 // 6. Use describe () to learn about the DataFrame. 
->>>>>>> 28930c05ce1aff8748fe25c81f1bdf1be9a0d76e
 df.describe().show()
 
 // 7. Create a new dataframe with a new column called "HV Ratio" which is the relationship between the price of the column "High" versus the column "Volume" of shares traded for one day. (Hint: It is a column operation).
 val df2 = df.withColumn("HV Ratio",df("High")/df("Volume"))
-<<<<<<< HEAD
-
-// 8. Which day had the highest peak in the “Close” column?
-df.select(max("Close")).show()
-
-// 9. Write in your own words in a comment of your code. Which is the meaning of the Close column “Close”?
-    // Answer: It means the price with which the stock ended at the closing of the stock market that day.
-=======
 df2.show() 
 
 // 8. Which day had the highest peak in the “Close” column?
 df.select("Date","Close").groupBy(dayofweek(df("Date")).alias("Day")).max("Close").sort(col("Day").asc).show(1)
 
-// 9. Write in your own words in a comment of your code. Which is the
-// meaning of the Close column “Close”?
-    // It means the price with which the stock ended at the closing of the stock market that day.
->>>>>>> 28930c05ce1aff8748fe25c81f1bdf1be9a0d76e
+// 9. Write in your own words in a comment of your code. Which is the meaning of the Close column “Close”?
+    // Answer: It means the price with which the stock ended at the closing of the stock market that day.
 
 // 10. What is the max and min of the Volume column?
 df.select(max("Volume")).show()
@@ -69,8 +50,4 @@ df.select(min("Volume")).show()
     df.groupBy(year(df("Date")).alias("Year")).max("High").sort(col("Year").desc).show()
 
     // e. What is the average Close for each Calender Month?
-<<<<<<< HEAD
     df.groupBy(month(df("Date")).alias("Month")).avg("Close").sort(col("Month").asc).show() 
-=======
-    df.groupBy(month(df("Date")).alias("Month")).avg("Close").sort(col("Month").asc).show() 
->>>>>>> 28930c05ce1aff8748fe25c81f1bdf1be9a0d76e

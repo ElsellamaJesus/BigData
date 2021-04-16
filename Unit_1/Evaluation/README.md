@@ -1,7 +1,7 @@
 # Evaluation
 --- 
 ## Exam Unit 1 - Big Data
-Import libraries
+- Import libraries
 ```scala
 import org.apache.spark.sql.SparkSession
 import spark.implicits._
@@ -98,7 +98,7 @@ df.select(corr("High","Volume")).show()
 **Explanation:** In part c), by means of a “.select ()”, we use the “.corr”function to calculate the correlation (Pearson's correlation coefficient)between the “High” and “Volume” columns.
 
 
-**d.**What is the max High per year?
+**d.** What is the max High per year?
 ```scala
 df.groupBy(year(df("Date")).alias("Year")).max("High").sort(col("Year").desc)show()
 ```

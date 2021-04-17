@@ -41,7 +41,7 @@ df.select(min("Volume")).show()
     df.filter($"Close" < 600).count()
 
     // b. What percentage of the time was the High greater than $500?
-	(df.filter($"High">500).count()*1.0/df.count())*100
+    (df.filter($"High">500).count()*1.0/df.count())*100
 
     // c. What is the Pearson correlation between High and Volume?
     df.select(corr("High","Volume")).show()

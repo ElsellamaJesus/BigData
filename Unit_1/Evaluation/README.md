@@ -10,8 +10,10 @@ import spark.implicits._
  ```scala 
 val spark = SparkSession.builder().getOrCreate()
 ```
-**Explanation:** In point 1, we were asked to start a session in Spark, we started by importing the sql library to start the session, then we imported another library that will serve us later with the operations with implicit data and finally we assign to a variable the session created.
+**Explanation:** In point 1, we were asked to start a session in Spark, we started by importing the sql library to start the session, then we imported another library that will serve us later with the operations with implicit data and finally we assign to a variable the session created.\
 
+**Result**
+<html><div align="center"><img src="https://drive.google.com/file/d/11J3WnR1aalORdxV1-WiEr-5WxtrQ47Fy/view?usp=sharing"></div></html>
 
 **2.** Load Netflix Stock CSV file, have Spark infer data types.
 ```scala
@@ -19,7 +21,8 @@ val df = spark.read.option("header", "true").option("inferSchema","true")csv("Ne
 ```
 **Explanation:** In point 2, we append the dataframe to be used, assign it to a variable that we call "df (dataframe)" and infer the data. It should be noted that the CSV file was in the same folder as the scala file, so the path was not specified.
 
-
+**Result**
+<html><div align="center"><img src="https://i.ibb.co/NSqQwSB/R1960.png"></div></html>
 **3.** What are the column names?
 ```scala
 df.columns

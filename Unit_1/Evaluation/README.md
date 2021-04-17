@@ -13,7 +13,7 @@ val spark = SparkSession.builder().getOrCreate()
 **Explanation:** In point 1, we were asked to start a session in Spark, we started by importing the sql library to start the session, then we imported another library that will serve us later with the operations with implicit data and finally we assign to a variable the session created.\
 
 **Result**
-<html><div align="center"><img src="https://ibb.co/2dMNnSZ"></div></html>
+<html><div align="center"><img src="https://i.ibb.co/Xt582DY/Cap1.png" alt="Cap1" border="0"></div></html>
 
 
 

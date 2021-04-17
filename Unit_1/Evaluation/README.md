@@ -13,7 +13,7 @@ val spark = SparkSession.builder().getOrCreate()
 **Explanation:** In point 1, we were asked to start a session in Spark, we started by importing the sql library to start the session, then we imported another library that will serve us later with the operations with implicit data and finally we assign to a variable the session created.\
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/Xt582DY/Cap1.png" alt="Cap1" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/Xt582DY/Cap1.png" alt="Cap1"></div></html>
 
 
 
@@ -24,7 +24,7 @@ val df = spark.read.option("header", "true").option("inferSchema","true")csv("Ne
 **Explanation:** In point 2, we append the dataframe to be used, assign it to a variable that we call "df (dataframe)" and infer the data. It should be noted that the CSV file was in the same folder as the scala file, so the path was not specified.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/TTyHyxx/Cap2.png" alt="Cap2" border="0"></div></html>
+<html><div align="center"><img src="https://i.ibb.co/TTyHyxx/Cap2.png" alt="Cap2"></div></html>
 
 
 
@@ -35,7 +35,7 @@ df.columns
 **Explanation:** In point 3, with a property called ".columns", we only send the names of the columns of our dataframe.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/HzBsWyM/Cap3.png" alt="Cap3" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/HzBsWyM/Cap3.png" alt="Cap3"></div></html>
 
 
 
@@ -46,7 +46,7 @@ df.printSchema()
 **Explanation:** In point 4, with the function ".printSchema ()" we show a table with the complete panorama of the dataframe.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/QF8Z91j/Cap4.png" alt="Cap4" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/QF8Z91j/Cap4.png" alt="Cap4"></div></html>
 
 
 
@@ -57,7 +57,7 @@ df.head(5)
 **Explanation:** In point 5, with the “.head ()” function, we show the first values ​​of the dataframe, which in this one are the first 5.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/h7KkwTD/Cap5.png" alt="Cap5" border="0">/div></html>
+<html><div><img src="https://i.ibb.co/h7KkwTD/Cap5.png" alt="Cap5">/div></html>
 
 
 
@@ -68,7 +68,7 @@ df.describe().show()
 **Explanation:** In point 6, with the function “.describe ()” the information with the most relevant statistical data (total, mean, standard deviation, minimum and maximum value) of the dataframe is displayed.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/CVQrF2Y/Cap6.png" alt="Cap6" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/CVQrF2Y/Cap6.png" alt="Cap6"></div></html>
 
 
 
@@ -80,7 +80,7 @@ df2.show()
 **Explanation:** In point 7, we create another column with the function “.withColumn ()” that consists of the division of 2 fields of the dataframe and is assigned to another variable so as not to affect the original dataframe.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/3FgK0k5/Cap7.png" alt="Cap7" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/3FgK0k5/Cap7.png" alt="Cap7"></div></html>
 
 
 
@@ -91,7 +91,7 @@ df.select("Date","Close").groupBy(dayofweek(df("Date")).alias("Day")).max("Close
 **Explanation:** In point 8, we create a query with the commands offered by the import SQL functions. With the function ".select ()" we will carry out the query and as is usually done in the SQL language, we group the data according to a field, assign an alias, specify the column that filters the data and finally the order in which it is will display the query.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/qnBwD8g/Cap8.png" alt="Cap8" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/qnBwD8g/Cap8.png" alt="Cap8"></div></html>
 
 
 
@@ -108,7 +108,7 @@ df.select(min("Volume")).show()
 **Explanation:** In point 10, we use the functions “.max ()” and “.min ()” to show the value of the maximum and minimum volume of the Netflix dataframe.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/jyQ2b2s/Cap10.png" alt="Cap10" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/jyQ2b2s/Cap10.png" alt="Cap10"></div></html>
 
 
 
@@ -120,7 +120,7 @@ df.filter($"Close" < 600).count()
  **Explanation:** In part a), we use the “.filter ()” function to filter thequery according to a condition that in this one was data less than 600 fromthe “Close” column.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/7CWH2p0/Cap11a.png" alt="Cap11a" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/7CWH2p0/Cap11a.png" alt="Cap11a"></div></html>
 
 
 
@@ -131,7 +131,7 @@ df.filter($"Close" < 600).count()
 **Explanation:** In part b), we also filter the content of the dataframe, butin this case we perform an operation to calculate the percentage of time.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/HNK1gL7/Cap11b.png" alt="Cap11b" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/HNK1gL7/Cap11b.png" alt="Cap11b"></div></html>
 
 
 
@@ -142,7 +142,7 @@ df.select(corr("High","Volume")).show()
 **Explanation:** In part c), by means of a “.select ()”, we use the “.corr”function to calculate the correlation (Pearson's correlation coefficient)between the “High” and “Volume” columns.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/7rtCjpv/Cap11c.png" alt="Cap11c" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/7rtCjpv/Cap11c.png" alt="Cap11c"></div></html>
 
 
 
@@ -153,7 +153,7 @@ df.groupBy(year(df("Date")).alias("Year")).max("High").sort(col("Year").desc)sho
 **Explanation:** In part d), in a similar way to SQL we create a query throughthe function ".groupBy ()" that groups the data by the year of the column"Date" and the highest value of the column "High ”.
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/tm9TVwr/Cap11d.png" alt="Cap11d" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/tm9TVwr/Cap11d.png" alt="Cap11d"></div></html>
 
 
 
@@ -164,4 +164,4 @@ df.groupBy(month(df("Date")).alias("Month")).avg("Close").sort(col("Month")asc).
 **Explanation:** In part d), also similarly to SQL, we create a query throughthe function ".groupBy ()" that groups the data by the month of the column "Date" and the average of the column "Close".
 
 **Result**
-<html><div align="center"><img src="https://i.ibb.co/SVHXTqp/Cap11e.png" alt="Cap11e" border="0"></div></html>
+<html><div><img src="https://i.ibb.co/SVHXTqp/Cap11e.png" alt="Cap11e"></div></html>

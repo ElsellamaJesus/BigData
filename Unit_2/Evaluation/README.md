@@ -17,10 +17,6 @@ val  spark = SparkSession.builder.appName("MultilayerPerceptronClassifierExample
 ```
 **Explanation:** In point 2, you have to start a session in Spark, for which we already import the sql library to start the session, finally we assign the created session to a variable.
 
-**Result**
-<html><div><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelp.turitop.com%2Fhc%2Farticle_attachments%2F360012747880%2Ferror.png&f=1&nofb=1" alt="Cap6"></div></html>
-
-
 
 **3. We load the file iris.csv Load in a dataframe Iris.csv, ([https://github.com/jcromerohdz/BigData/blob/master/Spark_DataFrame/ContainsNull.scalatti ])**
 ```scala
@@ -28,8 +24,6 @@ val  df = spark.read.option("header","true").option("inferSchema", "true").forma
 ```
 **Explanation:** At point 3, we append the dataframe to use, assign it to a variable that we call "df (dataframe)" and infer the data. It should be noted that the csv file was not in the same folder as the scala file, so the path was specified.
 
-**Result**
-<html><div><img src="" alt="Cap6"></div></html>
 
 
 **4. We clean the data**
@@ -38,8 +32,6 @@ val  data = df.na.drop()
 ```
 **Explanation:** In point 4, we use the "na.drop" function to eliminate the rows that contain null values, since if they have no value they will only cause the use of more resources and errors in the whole analysis.
 
-**Result**
-<html><div><img <html><div><img src="" alt="Cap6"></div></html>
 
 
 
@@ -50,7 +42,9 @@ data.columns
 **Explanation:** In point 5, with a property called ".columns", we only called the names of the columns of our dataframe.
 
 **Result**
-<html><div><img src="" alt="Cap6"></div></html>
+```scala 
+res4: Array[String] = Array(sepal_length, sepal_width, petal_length, petal_width, species)
+```
 
 
 
@@ -61,7 +55,14 @@ data.printSchema()
 **Explanation:** In point 6, with the function ".printSchema ()" we show a table with the complete panorama of the dataframe.
 
 **Result**
-<html><div><img src="" alt="Cap5"></div></html>
+```scala 
+root
+ |-- sepal_length: double (nullable = true)
+ |-- sepal_width: double (nullable = true)
+ |-- petal_length: double (nullable = true)
+ |-- petal_width: double (nullable = true)
+ |-- species: string (nullable = true)
+```
 
 
 
@@ -72,7 +73,18 @@ data.show(5)
  **Explanation:** In point 7, with the “.show ()” function, we show the first values ​​of the dataframe, which in this one are the first 5.
 
 **Result**
-<html><div><img src="" alt="Cap6"></div></html>
+```scala
++------------+-----------+------------+-----------+-------+
+|sepal_length|sepal_width|petal_length|petal_width|species|
++------------+-----------+------------+-----------+-------+
+|         5.1|        3.5|         1.4|        0.2| setosa|
+|         4.9|        3.0|         1.4|        0.2| setosa|
+|         4.7|        3.2|         1.3|        0.2| setosa|
+|         4.6|        3.1|         1.5|        0.2| setosa|
+|         5.0|        3.6|         1.4|        0.2| setosa|
++------------+-----------+------------+-----------+-------+
+only showing top 5 rows
+```
 
 
 
@@ -83,7 +95,17 @@ data.describe.show()
 **Explanation:** In point 8, with the function “.describe ()”, we show the characteristics of the data.
 
 **Result**
-<html><div><img src="" alt="Cap6"></div></html>
+```scala
++-------+------------------+-------------------+------------------+------------------+---------+
+|summary|      sepal_length|        sepal_width|      petal_length|       petal_width|  species|
++-------+------------------+-------------------+------------------+------------------+---------+
+|  count|               150|                150|               150|               150|      150|
+|   mean| 5.843333333333335| 3.0540000000000007|3.7586666666666693|1.1986666666666672|     null|
+| stddev|0.8280661279778637|0.43359431136217375| 1.764420419952262|0.7631607417008414|     null|
+|    min|               4.3|                2.0|               1.0|               0.1|   setosa|
+|    max|               7.9|                4.4|               6.9|               2.5|virginica|
++-------+------------------+-------------------+------------------+------------------+---------+
+```
 
 
 
@@ -92,10 +114,6 @@ data.describe.show()
 val  assembler = new  VectorAssembler().setInputCols(Array("sepal_length","sepal_width","petal_length","petal_width")).setOutputCol("features")
 ```
 **Explanation:** At point 9, we have to convert the selected columns into a vector, which will be our characteristics.
-
-**Result**
-<html><div><img src="" alt="Cap6"></div></html>
-
 
 
 **10. Define output data**
@@ -113,10 +131,6 @@ val  indexed = indexer.fit(output).transform(output)
 ```
 **Explanation:** In point 11, we create indexes of the species column that is transformed into numerical data and we adjust with the output vector “output”.
 
-**Result**
-<html><div><img src="" alt="Cap6"></div></html>
-
-
 
 **12. Build the classification model and explain the architecture.**
 
@@ -129,10 +143,6 @@ val  test = splits(1)
 ```
 **Explanation:** At point 12, we have to randomly divide the data into training "train 60% (0.6)" and test "test 40% (0.4)", then we assign variables to the selected data.
 
-**Result**
-<html><div><img src="" alt="Cap6"></div></html>
-
-
 
 **13. We create the neural network**
 ```scala
@@ -141,10 +151,6 @@ val  layers = Array[Int](4, 5, 4, 3)
 val  trainer = new  MultilayerPerceptronClassifier().setLayers(layers).setBlockSize(128).setSeed(1234L).setMaxIter(100)
 ```
 **Explanation:** In point 13, we define the stages of the neural network, four input layer elements, two cultured layers, one of five and one of four elements respectively, and three output layer elements. Next we assign the training data, the model with which we will work in this chapter.
-
-**Result**
-<html><div><img src="" alt="Cap6"></div></html>
-
 
 
 **14. Train the model**
@@ -156,9 +162,6 @@ val  result = model.transform(test)
 val  predictionAndLabels = result.select("prediction", "label")
 ```
 **Explanation:** In point 14, Train the model with the data selected for training. Evaluate the training result using the same model but with the test data, and print the prediction results vs. those we already had in the dataframe.
-
-**Result**
-<html><div><img src="" alt="Cap6"></div></html>
 
 
 
@@ -173,7 +176,28 @@ println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
 ** Explanation: ** In point 15, Determine a metric to evaluate the model, that is, the precision. Print the first 50 rows of the resulting data frame. And finally, print the data classification precision percentage.
 
 **Result**
-<html><div><img src="" alt="Cap6"></div></html>
-
+```scala
++------------+-----------+------------+-----------+-------+-----------------+-----+--------------------+--------------------+----------+
+|sepal_length|sepal_width|petal_length|petal_width|species|         features|label|       rawPrediction|         probability|prediction|
++------------+-----------+------------+-----------+-------+-----------------+-----+--------------------+--------------------+----------+
+|         4.3|        3.0|         1.1|        0.1| setosa|[4.3,3.0,1.1,0.1]|  2.0|[15.6939102472457...|[4.49726715588115...|       2.0|
+|         4.4|        2.9|         1.4|        0.2| setosa|[4.4,2.9,1.4,0.2]|  2.0|[15.7205776664764...|[5.32055408135416...|       2.0|
+|         4.4|        3.0|         1.3|        0.2| setosa|[4.4,3.0,1.3,0.2]|  2.0|[15.7038134381871...|[4.78697261626649...|       2.0|
+|         4.6|        3.4|         1.4|        0.3| setosa|[4.6,3.4,1.4,0.3]|  2.0|[15.6877056144553...|[4.32476070392186...|       2.0|
+|         4.6|        3.6|         1.0|        0.2| setosa|[4.6,3.6,1.0,0.2]|  2.0|[15.6739436876185...|[3.96538767140727...|       2.0|
+|         4.7|        3.2|         1.6|        0.2| setosa|[4.7,3.2,1.6,0.2]|  2.0|[15.7412734317472...|[6.06200464499190...|       2.0|
+|         4.8|        3.1|         1.6|        0.2| setosa|[4.8,3.1,1.6,0.2]|  2.0|[15.7753958949252...|[7.51682313582786...|       2.0|
+|         5.0|        3.2|         1.2|        0.2| setosa|[5.0,3.2,1.2,0.2]|  2.0|[15.7415843992936...|[6.07389961264308...|       2.0|
+|         5.0|        3.3|         1.4|        0.2| setosa|[5.0,3.3,1.4,0.2]|  2.0|[15.7498146125576...|[6.39734401981583...|       2.0|
+|         5.0|        3.4|         1.5|        0.2| setosa|[5.0,3.4,1.5,0.2]|  2.0|[15.7461427849689...|[6.25096742565720...|       2.0|
++------------+-----------+------------+-----------+-------+-----------------+-----+--------------------+--------------------+----------+
+only showing top 10 rows
+ 
+ scala>   
+     |    println(s"Test set accuracy = ${evaluator.evaluate(predictionAndLabels)}")
+Test set accuracy = 0.9607843137254902
+```
 #
 **Conclusion and observations**
+
+We have learned the basics of classification, the main algorithms and how to adjust them according to the problem we face. There is always the risk of overtraining or biases in which the data have a large difference between one and the other.

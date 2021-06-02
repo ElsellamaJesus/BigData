@@ -13,7 +13,7 @@ import org.apache.spark.sql.SparkSession
 val spark = SparkSession.builder.appName("MultilayerPerceptronClassifierExample").getOrCreate()
 
 // 1. Load into a dataframe Iris.csv and later clean the data(https://github.com/jcromerohdz/BigData/blob/master/Spark_DataFrame/ContainsNull.scala)
-val df = spark.read.option("header","true").option("inferSchema", "true").format("csv").load("/home/js/Escritorio/Exam_U2/iris.csv")
+val df = spark.read.option("header","true").option("inferSchema", "true").format("csv").load("/home/js/Documentos/GitHub/BigData/Unit_2/Evaluation/Exam_U2/iris.csv")
 
 val data = df.na.drop()
 

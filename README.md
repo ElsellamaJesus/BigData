@@ -1,7 +1,5 @@
-# Unit 1
+# BigData
 ---
-## Contents:
-### - [Evaluation](https://github.com/ElsellamaJesus/BigData/tree/Unit_1/Unit_1/Evaluation)
-### - [Homework](https://github.com/ElsellamaJesus/BigData/tree/Unit_1/Unit_1/Homework)
-### - [Practices](https://github.com/ElsellamaJesus/BigData/tree/Unit_1/Unit_1/Practices)
-### - [Researh](https://github.com/ElsellamaJesus/BigData/tree/Unit_1/Unit_1/Research)
+## Members
+### Salazar Ibarra Jesus Rodrigo	16212542
+### Camacho Manabe Juan Daniel    17210534

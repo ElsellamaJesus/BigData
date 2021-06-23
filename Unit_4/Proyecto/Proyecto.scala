@@ -87,7 +87,7 @@ val DTR = new DecisionTreeClassifier().setLabelCol("indexedLabel").setFeaturesCo
 val labelConverter = new IndexToString().setInputCol("prediction").setOutputCol("predictedLabel").setLabels(labelIndexer.labels)
 
 //Usamos pipeline para asignar donde quereos el indice de datos y con que datos 
-val pipeline = new Pipeline().setStages(Array(labelIndexer, featureIndexer, decisionTree, labelConverter))
+val pipeline = new Pipeline().setStages(Array(labelIndexer, featureIndexer, DTR, labelConverter))
 
 //Entrenamos el modelos con el indice de datos creado  asignado con pipeline
 val model = pipeline.fit(trainingData)
@@ -103,10 +103,11 @@ val evaluator = new MulticlassClassificationEvaluator().setLabelCol("indexedLabe
 
 //Entonces determinamos la presicion deacuerdo al evaluador 
 val accuracy = evaluator.evaluate(predictions)
-
+ 
 //Opteniendo la presicion y el porcentaje de error
 println(s"Accuracy: ${(accuracy)}")
 println(s"Test Error: ${(1.0 - accuracy)}")
+ 
 
 
 //LOGISTIC REGRESION 

@@ -37,7 +37,7 @@ val assembler = new VectorAssembler().setInputCols(Array("Fresh", "Milk", "Groce
 val training_data = assembler.transform(feature_data).select("features")
 
 // Create a Kmeans Model with K=3
-val kmeans = new KMeans().setK(3).setSeed(1L)
+val kmeans = new KMeans().setK(2).setSeed(1L)
 
 // Fit that model to the training_data
 val model = kmeans.fit(training_data)

@@ -56,7 +56,7 @@ val  model = kmeans.fit(training_data)
 ```scala
 val  WSSSE = model.computeCost(training_data)
 
-println(s"Within Set Sum of Squared Errors = $WSSSE")
+println(s"a = $WSSSE")
 ```
 
 #### Shows the result
@@ -121,7 +121,7 @@ scala> val model = kmeans.fit(training_data)
 21/06/11 20:40:00 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
 model: org.apache.spark.ml.clustering.KMeansModel = kmeans_8021bb184bc0         
 
-scala> val WSSSE = model.computeCost(training_data)
+scala> val  = model.computeCost(training_data)
 warning: there was one deprecation warning; re-run with -deprecation for details
 WSSSE: Double = 8.095172370767671E10
 

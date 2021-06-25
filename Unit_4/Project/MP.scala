@@ -1,9 +1,9 @@
+// Import libraries
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.classification.MultilayerPerceptronClassifier
-import org.apache.spark.ml.feature.StringIndexer 
-import org.apache.spark.ml.feature.VectorAssembler
+import org.apache.spark.ml.feature.{StringIndexer, VectorAssembler} 
  
 //Error level code.
 import org.apache.log4j._
@@ -12,7 +12,7 @@ Logger.getLogger("org").setLevel(Level.ERROR)
 //Spark session.
 val spark = SparkSession.builder.appName("MultilayerPerseptron").getOrCreate()
 //Reading the csv file.
-val df  = spark.read.option("header","true").option("inferSchema", "true").option("delimiter",";").format("csv").load("bank.csv")
+val df  = spark.read.option("header","true").option("inferSchema", "true").option("delimiter",";").format("csv").load("bank-full.csv")
  
 //Indexing.
 val labelIndexer = new StringIndexer().setInputCol("y").setOutputCol("indexedLabel").fit(df)

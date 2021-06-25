@@ -1,16 +1,16 @@
 # Unit 4 - Final Project
 
 ## Table of Contents
-- ### [Introduction](##introduction)
-- ### [Theoretical framework](##Theoretical-Framework)
-	- #### [Logistic Regression](###Logistic-Regression)
-	- #### [Decision Tree](###Decision-Tree)
-	- #### [Support Vector Machine](###Support-Vector-Machine)
-	- #### [Multilayer Perceptron](###Multilayer-Perceptron)
-- ### [Implementation](##Implementation)
-- ### [Results](##Results)
-- ### [Conclusions](##Conclusions)
-- ### [References](##References)
+- ### [Introduction](#Introduction)
+- ### [Theoretical framework](#Theoretical-framework)
+	- #### [Logistic Regression](#Logistic-Regression)
+	- #### [Decision Tree](#Decision-Tree)
+	- #### [Support Vector Machine](#Support-Vector-Machine)
+	- #### [Multilayer Perceptron](#Multilayer-Perceptron)
+- ### [Implementation](#Implementation)
+- ### [Results](#Results)
+- ### [Conclusions](#Conclusions)
+- ### [References](#References)
 
 
 ## Introduction

@@ -2,15 +2,15 @@
 
 ## Table of Contents
 - ### [Introduction](#introduction)
-- ### [Theoretical framework](#Theoretical-Framework)
-	- #### [Logistic Regression](#Logistic-Regression)
-	- #### [Decision Tree](#Decision-Tree)
-	- #### [Support Vector Machine](#Support-Vector-Machine)
-	- #### [Multilayer Perceptron](#Multilayer-Perceptron)
-- ### [Implementation](#Implementation)
-- ### [Results](#Results)
-- ### [Conclusions](#Conclusions)
-- ### [References](#References)
+- ### [Theoretical framework](#iheoretical-framework)
+	- #### [Logistic Regression](#logistic-regression)
+	- #### [Decision Tree](#decision-tree)
+	- #### [Support Vector Machine](#support-vector-machine)
+	- #### [Multilayer Perceptron](#multilayer-perceptron)
+- ### [Implementation](#implementation)
+- ### [Results](#results)
+- ### [Conclusions](#conclusions)
+- ### [References](#references)
 
 
 ## Introduction
@@ -52,7 +52,7 @@ A decision tree is a predictive model that divides the predictor space by groupi
 ### Support Vector Machine
 Support Vector Machines constitute a learning-based method for solving classification and regression problems. In both cases, this resolution is based on a first training phase (where they are informed with multiple examples already solved, in the form of pairs {problem, solution}) and a second phase of use for problem solving. In it, SVMs become a "black box" that provides an answer (output) to a given problem (input).
 
-![SVM](https://vatsalparsaniya.github.io/ML_Knowledge/_images/gif.gif)
+![SVM](https://es.mathworks.com/discovery/support-vector-machine/_jcr_content/mainParsys/image.adapt.480.medium.jpg/1623143841227.jpg)
 
 - **Features**
 	- Kernels make SVMs more flexible and capable of handling non-linear problems.
@@ -342,7 +342,7 @@ Regarding the results of our table, after a sample of 45,212 records with 30 ite
 ## Conclusions
 In general the algorithms are very fast, there are even some specially optimized ones, the reality is that the algorithms vary in a few seconds in processing, certainly in human terms it is not much, but in machine time it could be relevant. Each algorithm runs under a different mathematical model and yet all algorithms approximate around 88% accuracy at least for this particular dataset.
 
-## References
+## References 
 -   IBM. (2014, 19 noviembre). Regresión Logística. ibm.com. [https://www.ibm.com/docs/es/spss-statistics/SaaS?topic=regression-logistic](https://www.ibm.com/docs/es/spss-statistics/SaaS?topic=regression-logistic)
     
 -   Merayo, P. (2021, 22 febrero). Qué son los árboles de decisión y para qué sirven. Máxima Formación. [https://www.maximaformacion.es/blog-dat/que-son-los-arboles-de-decision-y-para-que-sirven/](https://www.maximaformacion.es/blog-dat/que-son-los-arboles-de-decision-y-para-que-sirven/)
